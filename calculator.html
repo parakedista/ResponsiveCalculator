@@ -4,36 +4,38 @@
         <meta charset="UTF-8">
         <title>Responsive Calculator</title>
         <link rel="stylesheet" type="text/css" href="public/style.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="calculator.js"></script>
     </head>
 
     <body>
-        <div class="interaction">
-            <form class="box-center width350">
-                <h3>REM SIZE CALCULATOR</h3>
-                <!--<p>(font-base 16 / line-height 26)</p>-->
-                <p>
-                    A simple calculator to convert px to rem. It defaults the font-base to 16px.
-                </p>
-                <div>
+        <div class="container">
+            <h3>REM SIZE CALCULATOR</h3>
+            <p>
+                A simple calculator to convert px to rem. It defaults the font-base to 16px.
+            </p>
+            <!--<p>(font-base 16 / line-height 26)</p>-->
+            <form class="box-center">
+                <div class="form-group">
                     <label for="font-base">font-base in px:</label>
-                    <input id="font-base" value="16" onchange="calcRem()" type="text">
+                    <input id="font-base" class="form-control" value="16" type="text" onchange="calcRem()">
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="desired-size">value in px:</label>
-                    <input id="desired-size" value="" onchange="calcRem()" type="text">
+                    <input id="desired-size" class="form-control" value="" type="text" onchange="calcRem()">
                 </div>
 
                 <p>Resulting Values</p>
-                <div>
+
+                <div class="form-group">
                     <label for="rem-size">rem:</label>
-                    <input onclick="this.select();" id="rem-size" value="" type="text">
+                    <input id="rem-size" class="form-control" value="" type="text" readonly onclick="this.select();">
                 </div>
-                <div>
+                <div class="form-group">
                     <label for="line-height">line-height:</label>
-                    <input id="line-height" onclick="this.select();" value="" type="text">
+                    <input id="line-height" class="form-control" value="" type="text" readonly onclick="this.select();">
                 </div>
-                <input type="submit" value="Reset" onclick="reset()" />
+                <input type="submit" value="Reset" class="btn btn-danger" onclick="reset()" />
             </form>
         </div>
     </body>
